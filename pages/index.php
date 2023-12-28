@@ -7,9 +7,9 @@
   require "../functions/student.function.php";
   require "../functions/presence.function.php";
 
-  $totalPresence = queryPresence("SELECT COUNT(*) as total FROM presences");
+  $totalPresence = queryPresence("SELECT COUNT(*) as total FROM presences WHERE DATE(created_at) = CURDATE()");
 
-  $dataPresence = queryPresence("SELECT * FROM presences");
+  $dataPresence = queryPresence("SELECT * FROM presences WHERE DATE(created_at) = CURDATE()");
 
   $totalStudents = query("SELECT COUNT(*) as total FROM users");
 
