@@ -5,20 +5,49 @@
 
 <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
   <!-- Navbar -->
-  <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" data-scroll="true">
-    <div class="container-fluid py-1 px-3">
-      <nav aria-label="breadcrumb">
-        <h6 class="font-weight-bolder mb-0">Presence</h6>
-      </nav>
-    </div>
-  </nav>
-  
+  <?php include "../components/navbar.php"; ?>
+  <!-- End Navbar -->
+
   <?php
-    if($even !== "undefined") {
-      include "../components/presence/createPresence.php";
-    } else {
-      include "../components/presence/tablePrsence.php";
+
+  require "../functions/student.function.php";
+  require "../functions/presence.function.php";
+
+  $nis = query("SELECT nis FROM users");
+
+  if($_SERVER["REQUEST_METHOD"] == "POST") {
+    $data = [];
+
+    $data["nis"] = $_POST["nis"];
+    $data["journal_collection"] = $_POST["journal_collection"];
+    $data["student_attendance"] = $_POST["student_attendance"];
+
+    if(createPresence($data) > 0) {
+      echo '
+        <script>
+              Swal.fire({
+                title: "Good job!",
+                text: "Success create presence",
+                icon: "success"
+              });
+              setTimeout(() => {
+                location.href = "presence.php?page=presence";
+              }, 1500)
+          </script> 
+        ';
     }
+  }
+
+  $dataPresence = queryPresence("SELECT * FROM presences");
+
+  ?>
+
+  <?php
+  if ($even !== "undefined") {
+    include "../components/presence/createPresence.php";
+  } else {
+    include "../components/presence/tablePrsence.php";
+  }
   ?>
 
   <?php include "../components/bottom.php"; ?>

@@ -1,0 +1,1 @@
+<?php $conek = mysqli_connect("localhost", "root", "", "attendance_records"); ?>

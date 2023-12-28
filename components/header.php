@@ -1,17 +1,3 @@
-<!--
-=========================================================
-* Material Dashboard 2 - v3.1.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-dashboard
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://www.creative-tim.com/license)
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
--->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,9 +6,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/icon.png">
   <link rel="icon" type="image/png" href="../assets/img/logo.png">
+  <!-- php -->
+  <?php
+
+  session_start();
+
+  if (!isset($_SESSION["login"])) {
+    header("Location: signin.php");
+    exit;
+  }
+
+  $page = $_GET['page'];
+  $even = isset($_GET['even']) ? $_GET['even'] : 'undefined';
+
+  ?>
   <title>
-    Material Dashboard 2 by Creative Tim
+    <?= $page; ?>
   </title>
+  <!-- sweet alert -->
+  <script src="../assets/dist/sweetalert2.all.min.js"></script>
   <!--     Fonts and icons     -->
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
   <!-- Nucleo Icons -->
@@ -40,9 +42,3 @@
 </head>
 
 <body class="g-sidenav-show  bg-gray-200">
-
-<!-- php -->
-<?php 
-  $page = $_GET['page'];
-  $even = isset($_GET['even']) ? $_GET['even'] : 'undefined';
-?>
