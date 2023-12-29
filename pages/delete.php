@@ -20,7 +20,7 @@ if(deleteStudent($id) > 0) {
         <script>
               Swal.fire({
                 title: "Good job!",
-                text: "Success create presence",
+                text: "Success delete student!",
                 icon: "success"
               });
              setTimeout(() => {
