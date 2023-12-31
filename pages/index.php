@@ -71,7 +71,7 @@
                 <h6>Students who have attended</h6>
                 <p class="text-sm mb-0">
                   <i class="fa fa-check text-info" aria-hidden="true"></i>
-                  <span class="font-weight-bold ms-1">30 students have attended</span>
+                  <span class="font-weight-bold ms-1"><?= $totalPresence ? $totalPresence[0]["total"] : '0' ?> students have attended</span>
                 </p>
               </div>
             </div>
@@ -129,8 +129,10 @@
     </footer>
   </div>
   <?php else : ?>
-  <h2 class="text-center mt-5">Good luck with your internship</h2>
-  <?php endif; ?>
+  <h2 class="text-center mt-5">Good luck with your internship broww</h2>
+  <?php 
+     include "../components/bottom.php";
+  endif; ?>
 </main>
 <?php include "../components/plugin.php"; ?>
 
