@@ -69,9 +69,9 @@
 
   ?>
   <?php
-  if ($even === "add-student") {
+  if ($event === "add-student") {
     include "../components/students/createStudents.php";
-  } else if ($even === "edit-student") {
+  } else if ($event === "edit-student") {
     include "../components/students/editStudent.php";
   } else {
     include "../components/students/tableStudents.php";

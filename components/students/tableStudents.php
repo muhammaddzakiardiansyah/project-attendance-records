@@ -1,6 +1,6 @@
 <div class="container-fluid py-4">
     <div class="d-flex justify-content-between align-items-center">
-      <a href="students.php?page=students&even=add-student" class="btn btn-primary">Add Student</a>
+      <a href="students.php?page=students&event=add-student" class="btn btn-primary">Add Student</a>
       <div class="input-group input-group-outline w-25">
         <label class="form-label">Search</label>
         <input type="text" class="form-control">
@@ -50,7 +50,7 @@
                   </td>
                   <td>
                     <div class="ms-auto text-center">
-                      <a class="btn btn-link text-dark mb-0" href="students.php?page=students&even=edit-student&id=<?= $student["id"]; ?>"><i class="material-icons text-sm me-2">edit</i>Edit</a>
+                      <a class="btn btn-link text-dark mb-0" href="students.php?page=students&event=edit-student&id=<?= $student["id"]; ?>"><i class="material-icons text-sm me-2">edit</i>Edit</a>
                       <a class="btn btn-link text-danger text-gradient mb-0" href="delete.php?id=<?= $student["id"]; ?>" onclick="confirm('You sure delete it?')"><i class="material-icons text-sm me-2">delete</i>Delete</a>
                     </div>
                   </td>

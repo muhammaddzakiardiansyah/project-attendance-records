@@ -1,8 +1,8 @@
 <?php 
   $name = '';
-  if($page === "presence" && $even === 'add-presence') {
+  if($page === "presence" && $event === 'add-presence') {
     $name = "Add Presence";
-  } else if($page === "students" && $even === 'add-student') {
+  } else if($page === "students" && $event === 'add-student') {
     $name = "Add Student";
   }  else if($page === "dashboard") {
     $name = 'Dashboard';

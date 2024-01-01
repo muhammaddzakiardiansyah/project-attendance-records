@@ -13,7 +13,7 @@
   require "../functions/student.function.php";
   require "../functions/presence.function.php";
 
-  $nis = query("SELECT nis FROM users");
+  $nis = query("SELECT nis FROM users WHERE role <> 'admin'");
 
   if($_SERVER["REQUEST_METHOD"] == "POST") {
     $data = [];
@@ -21,21 +21,30 @@
     $data["nis"] = $_POST["nis"];
     $data["journal_collection"] = $_POST["journal_collection"];
     $data["student_attendance"] = $_POST["student_attendance"];
-
-    if(createPresence($data) > 0) {
+    if($data["nis"] === "Open this select nis") {
       echo '
         <script>
               Swal.fire({
-                title: "Good job!",
-                text: "Success create presence",
-                icon: "success"
+                title: "Failed!",
+                text: "Nis is required!",
+                icon: "warning"
               });
-              setTimeout(() => {
-                location.href = "presence.php?page=presence";
-              }, 1500)
           </script> 
         ';
-    }
+    } else if(createPresence($data) > 0) {
+        echo '
+          <script>
+                Swal.fire({
+                  title: "Good job!",
+                  text: "Success create presence",
+                  icon: "success"
+                });
+                setTimeout(() => {
+                  location.href = "presence.php?page=presence";
+                }, 1500)
+            </script> 
+          ';
+      }
   }
 
   $dataPresence = queryPresence("SELECT * FROM presences");
@@ -43,7 +52,7 @@
   ?>
 
   <?php
-  if ($even !== "undefined") {
+  if ($event !== "undefined") {
     include "../components/presence/createPresence.php";
   } else {
     include "../components/presence/tablePrsence.php";

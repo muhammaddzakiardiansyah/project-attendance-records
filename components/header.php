@@ -17,7 +17,7 @@
   }
 
   $page = $_GET['page'];
-  $even = isset($_GET['even']) ? $_GET['even'] : 'undefined';
+  $event = isset($_GET['event']) ? $_GET['event'] : 'undefined';
 
   ?>
   <title>

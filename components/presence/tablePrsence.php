@@ -1,6 +1,6 @@
 <div class="container-fluid py-4">
     <div class="d-flex justify-content-between align-items-center">
-      <a href="presence.php?page=presence&even=add-presence" class="btn btn-primary">Add Presence</a>
+      <a href="presence.php?page=presence&event=add-presence" class="btn btn-primary">Add Presence</a>
       <div class="input-group input-group-outline w-25">
         <label class="form-label">Search</label>
         <input type="text" class="form-control">

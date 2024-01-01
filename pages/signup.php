@@ -42,7 +42,17 @@
     $data["number_phone"] = $_POST["number_phone"];
     $data["address"] = $_POST["address"];
 
-    if (createUser($data) > 0) {
+    if($data["class"] === "Open this select class") {
+      echo '
+        <script>
+              Swal.fire({
+                title: "Failed!",
+                text: "Class is required!",
+                icon: "warning"
+              });
+          </script> 
+        ';
+    } else if (createUser($data) > 0) {
       echo '
           <script>
               Swal.fire({
