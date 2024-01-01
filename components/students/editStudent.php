@@ -24,8 +24,8 @@
                     <div class="input-group input-group-outline mb-3">
                         <select class="form-control" name="class" aria-label="Default select example" required>
                             <option selected>Open this select class</option>
-                            <option value="XI PPLG 1">XI PPLG 1</option>
-                            <option value="XI PPLG 2">XI PPLG 2</option>
+                            <option value="XI PPLG 1" <?= $detailStudent[0]["class"] === "XI PPLG 1" ? "selected" : "" ?>>XI PPLG 1</option>
+                            <option value="XI PPLG 2" <?= $detailStudent[0]["class"] === "XI PPLG 2" ? "selected" : "" ?>>XI PPLG 2</option>
                         </select>
                     </div>
                     <div class="input-group input-group-outline mb-3">
