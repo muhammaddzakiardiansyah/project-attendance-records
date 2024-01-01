@@ -14,7 +14,7 @@
 
   $id = isset($_GET["id"]) ? $_GET["id"] : "undefined";
 
-  $dataStudent = query("SELECT * FROM users");
+  $dataStudent = query("SELECT * FROM users WHERE role <> 'admin'");
 
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
 

@@ -11,7 +11,7 @@
 
   $dataPresence = queryPresence("SELECT * FROM presences WHERE DATE(created_at) = CURDATE()");
 
-  $totalStudents = query("SELECT COUNT(*) as total FROM users");
+  $totalStudents = query("SELECT COUNT(*) as total FROM users WHERE role <> 'admin'");
 
 ?>
 
