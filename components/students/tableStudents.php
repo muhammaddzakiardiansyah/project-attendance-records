@@ -1,10 +1,6 @@
 <div class="container-fluid py-4">
     <div class="d-flex justify-content-between align-items-center">
       <a href="students.php?page=students&event=add-student" class="btn btn-primary">Add Student</a>
-      <div class="input-group input-group-outline w-25">
-        <label class="form-label">Search</label>
-        <input type="text" class="form-control">
-      </div>
     </div>
   </div>
   <div class="row">
@@ -60,6 +56,21 @@
             </table>
           </div>
         </div>
+      </div>
+      <div class="d-flex align-items-center gap-3 justify-content-center">
+              <?php if ($activepage > 1) : ?>
+               <a href="students.php?page=students&p=<?= $activepage - 1; ?>">&laquo;</a>
+              <?php endif; ?>
+              <?php for ($i = 1; $i <= $numberOfPages; $i++) : ?>
+               <?php if ($i == $activepage) : ?>
+                 <a href="students.php?page=students&p=<?= $i; ?>" class="fs-5 text-primary fw-bold"><?= $i; ?></a>
+               <?php else : ?>
+                 <a href="students.php?page=students&p=<?= $i; ?>" class="fs-5"><?= $i; ?></a>
+               <?php endif; ?>
+              <?php endfor; ?>
+              <?php if ($activepage < $numberOfPages) : ?>
+               <a href="students.php?page=students&p=<?= $activepage + 1; ?>">&raquo;</a>
+              <?php endif; ?>
       </div>
     </div>
   </div>

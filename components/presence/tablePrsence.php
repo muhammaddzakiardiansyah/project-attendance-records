@@ -1,10 +1,6 @@
 <div class="container-fluid py-4">
     <div class="d-flex justify-content-between align-items-center">
       <a href="presence.php?page=presence&event=add-presence" class="btn btn-primary">Add Presence</a>
-      <div class="input-group input-group-outline w-25">
-        <label class="form-label">Search</label>
-        <input type="text" class="form-control">
-      </div>
     </div>
   </div>
   <div class="row">
@@ -23,9 +19,9 @@
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">NIS</th>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Student Name</th>
                   <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Class</th>
+                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date of Attendance</th>
                   <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Journal Collection</th>
                   <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Student Attendance</th>
-                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date of Attendance</th>
                 </tr>
               </thead>
               <tbody>
@@ -43,13 +39,13 @@
                     <p class="text-xs font-weight-bold mb-0"><?= $presence["class"]; ?></p>
                   </td>
                   <td class="align-middle text-center">
+                    <p class="text-xs font-weight-bold mb-0"><?= date("d F Y", strtotime($presence["tanggal_input"])); ?></p>
+                  </td>
+                  <td class="align-middle text-center">
                     <p class="text-xs font-weight-bold mb-0"><?= $presence["journal_collection"]; ?></p>
                   </td>
                   <td class="align-middle text-center">
                     <p class="text-xs font-weight-bold mb-0"><?= $presence["student_attendance"]; ?></p>
-                  </td>
-                  <td class="align-middle text-center">
-                    <p class="text-xs font-weight-bold mb-0"><?= date("d F Y H:i", strtotime($presence["created_at"])); ?></p>
                   </td>
                 </tr>
                 <?php endforeach; ?>

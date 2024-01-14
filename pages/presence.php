@@ -21,12 +21,24 @@
     $data["nis"] = $_POST["nis"];
     $data["journal_collection"] = $_POST["journal_collection"];
     $data["student_attendance"] = $_POST["student_attendance"];
+    $data["date_attendance"] = $_POST["date_attendance"];
+
     if($data["nis"] === "Open this select nis") {
       echo '
         <script>
               Swal.fire({
                 title: "Failed!",
                 text: "Nis is required!",
+                icon: "warning"
+              });
+          </script> 
+        ';
+    } else if($data["student_attendance"] === "Open this select attendance") {
+      echo '
+        <script>
+              Swal.fire({
+                title: "Failed!",
+                text: "Attendance is required!",
                 icon: "warning"
               });
           </script> 

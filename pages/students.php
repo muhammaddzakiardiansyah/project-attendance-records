@@ -14,7 +14,13 @@
 
   $id = isset($_GET["id"]) ? $_GET["id"] : "undefined";
 
-  $dataStudent = query("SELECT * FROM users WHERE role <> 'admin'");
+  $lotsOfData = 5;
+  $amountOfData = count(query("SELECT * FROM users WHERE role <> 'admin'"));
+  $numberOfPages = ceil($amountOfData / $lotsOfData);
+  $activepage = isset($_GET["p"]) ? $_GET["p"] : 1;
+  $firstData = ($lotsOfData * $activepage) - $lotsOfData;
+
+  $dataStudent = query("SELECT * FROM users WHERE role <> 'admin' ORDER BY created_at LIMIT $firstData, $lotsOfData");
 
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -63,6 +69,8 @@
       }
     }
   }
+
+
 
   $detailStudent = query("SELECT * FROM users WHERE id = '$id'");
 

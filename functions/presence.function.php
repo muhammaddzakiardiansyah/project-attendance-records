@@ -27,8 +27,9 @@ function createPresence($data) {
     $class = htmlspecialchars($dataStudent[0]["class"]);
     $journalCollection = htmlspecialchars($data["journal_collection"]);
     $studentAttendance = htmlspecialchars($data["student_attendance"]);
+    $dateAttendance = htmlspecialchars($data["date_attendance"]);
 
-    $query = "INSERT INTO presences (id, nis, full_name, class, journal_collection, student_attendance) VALUES ('$id', '$nis', '$full_name', '$class', '$journalCollection', '$studentAttendance')";
+    $query = "INSERT INTO presences (id, nis, full_name, class, tanggal_input, journal_collection, student_attendance) VALUES ('$id', '$nis', '$full_name', '$class', '$dateAttendance', '$journalCollection', '$studentAttendance')";
 
 
     mysqli_query($conek, $query);

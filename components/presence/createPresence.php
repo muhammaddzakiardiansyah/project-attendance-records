@@ -26,8 +26,15 @@
                         <input type="text" name="journal_collection" class="form-control" autocomplete="off" required>
                     </div>
                     <div class="input-group input-group-outline mb-3">
-                        <label class="form-label">Student Attendance</label>
-                        <input type="text" name="student_attendance" class="form-control" autocomplete="off" required>
+                        <select class="form-control" name="student_attendance" aria-label="Default select example" required>
+                            <option selected>Open this select attendance</option>
+                            <option value="Hadir">Hadir</option>
+                            <option value="Tidak hadir">Tidak hadir</option>
+                        </select>
+                    </div>
+                    <div class="input-group input-group-outline mb-3">
+                        <label class="form-label">Date Attendance</label>
+                        <input type="date" name="date_attendance" class="form-control" autocomplete="off" required>
                     </div>
                     <div class="text-center">
                         <button type="submit" class="btn btn-lg bg-gradient-primary btn-lg w-100 mt-4 mb-0">Submit</button>
