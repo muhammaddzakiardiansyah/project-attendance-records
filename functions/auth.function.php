@@ -1,6 +1,6 @@
 <?php 
 
-include "../config/dbConnected.php";
+include "config/dbConnected.php";
 
 function createUser($data) {
 

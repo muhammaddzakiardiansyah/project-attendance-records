@@ -17,7 +17,7 @@
                         <select class="form-control" name="nis" aria-label="Default select example" required>
                             <option selected>Open this select nis</option>
                             <?php foreach($nis as $n) : ?>
-                              <option value="<?= $n["nis"]; ?>"><?= $n["nis"]; ?></option>
+                              <option value="<?= $n["nis"]; ?>"><?= $n["nis"]; ?> - <?= $n["full_name"]; ?></option>
                             <?php endforeach; ?>
                         </select>
                     </div>

@@ -1,16 +1,16 @@
 <!-- header -->
-<?php include "../components/header.php"; ?>
+<?php include "components/header.php"; ?>
 <!-- sidebar -->
-<?php include "../components/sidebar.php"; ?>
+<?php include "components/sidebar.php"; ?>
 
 <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
   <!-- Navbar -->
-  <?php include "../components/navbar.php"; ?>
+  <?php include "components/navbar.php"; ?>
   <!-- End Navbar -->
   <?php
 
-  require "../functions/student.function.php";
-  require "../functions/auth.function.php";
+  require "functions/student.function.php";
+  require "functions/auth.function.php";
 
   $id = isset($_GET["id"]) ? $_GET["id"] : "undefined";
 
@@ -40,10 +40,12 @@
               Swal.fire({
                 title: "Good job!",
                 text: "Success create student!",
-                icon: "success"
+                icon: "success",
+                showConfirmButton: false,
+                timer: 2500,
               });
              setTimeout(() => {
-               location.href = "students.php?page=students";
+               location.href = "students?page=students";
              }, 1500)
           </script> 
           ';
@@ -57,10 +59,12 @@
               Swal.fire({
                 title: "Good job!",
                 text: "Success update student!",
-                icon: "success"
+                icon: "success",
+                showConfirmButton: false,
+                timer: 2500,
               });
              setTimeout(() => {
-               location.href = "students.php?page=students";
+               location.href = "students?page=students";
              }, 1500)
           </script> 
         ';
@@ -78,18 +82,18 @@
   ?>
   <?php
   if ($event === "add-student") {
-    include "../components/students/createStudents.php";
+    include "components/students/createStudents.php";
   } else if ($event === "edit-student") {
-    include "../components/students/editStudent.php";
+    include "components/students/editStudent.php";
   } else {
-    include "../components/students/tableStudents.php";
+    include "components/students/tableStudents.php";
   }
   ?>
 
-  <?php include "../components/bottom.php"; ?>
+  <?php include "components/bottom.php"; ?>
   </div>
 </main>
-<?php include "../components/plugin.php"; ?>
+<?php include "components/plugin.php"; ?>
 
 <!-- footer -->
-<?php include "../components/footer.php"; ?>
+<?php include "components/footer.php"; ?>

@@ -1,6 +1,6 @@
 <?php 
 
-require "../config/dbConnected.php";
+require "config/dbConnected.php";
 
 function query($query) {
     global $conek;

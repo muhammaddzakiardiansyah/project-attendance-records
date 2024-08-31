@@ -1,6 +1,6 @@
 <div class="container-fluid py-4">
     <div class="d-flex justify-content-between align-items-center">
-      <a href="presence.php?page=presence&event=add-presence" class="btn btn-primary">Add Presence</a>
+      <a href="presence?page=presence&event=add-presence" class="btn btn-primary">Add Presence</a>
     </div>
   </div>
   <div class="row">
@@ -39,7 +39,7 @@
                     <p class="text-xs font-weight-bold mb-0"><?= $presence["class"]; ?></p>
                   </td>
                   <td class="align-middle text-center">
-                    <p class="text-xs font-weight-bold mb-0"><?= date("d F Y", strtotime($presence["tanggal_input"])); ?></p>
+                    <p class="text-xs font-weight-bold mb-0"><?= date("d F Y", strtotime($presence["date_attendance"])); ?></p>
                   </td>
                   <td class="align-middle text-center">
                     <p class="text-xs font-weight-bold mb-0"><?= $presence["journal_collection"]; ?></p>

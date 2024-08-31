@@ -1,6 +1,6 @@
 <?php 
 
-require "../config/dbConnected.php";
+require "config/dbConnected.php";
 
 function queryPresence($query) {
     global $conek;
@@ -29,7 +29,7 @@ function createPresence($data) {
     $studentAttendance = htmlspecialchars($data["student_attendance"]);
     $dateAttendance = htmlspecialchars($data["date_attendance"]);
 
-    $query = "INSERT INTO presences (id, nis, full_name, class, tanggal_input, journal_collection, student_attendance) VALUES ('$id', '$nis', '$full_name', '$class', '$dateAttendance', '$journalCollection', '$studentAttendance')";
+    $query = "INSERT INTO presences (id, nis, full_name, class, date_attendance, journal_collection, student_attendance) VALUES ('$id', '$nis', '$full_name', '$class', '$dateAttendance', '$journalCollection', '$studentAttendance')";
 
 
     mysqli_query($conek, $query);

@@ -4,31 +4,31 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/logo.png">
-  <link rel="icon" type="image/png" href="../assets/img/logo.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="assets/img/logo.png">
+  <link rel="icon" type="image/png" href="assets/img/logo.png">
   <title>
     Sign In Account
   </title>
   <!-- sweet alert -->
-  <script src="../assets/dist/sweetalert2.all.min.js"></script>
+  <script src="assets/dist/sweetalert2.all.min.js"></script>
   <!--     Fonts and icons     -->
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
   <!-- Nucleo Icons -->
-  <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
-  <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
+  <link href="assets/css/nucleo-icons.css" rel="stylesheet" />
+  <link href="assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- Font Awesome Icons -->
   <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
   <!-- Material Icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
   <!-- CSS Files -->
-  <link id="pagestyle" href="../assets/css/material-dashboard.css?v=3.1.0" rel="stylesheet" />
+  <link id="pagestyle" href="assets/css/material-dashboard.css?v=3.1.0" rel="stylesheet" />
 </head>
 
-<body class="bg-gray-200">
+<body>
   <!-- php -->
   <?php
   session_start();
-  require '../config/dbConnected.php';
+  require 'config/dbConnected.php';
   // cek cookie
   if (isset($_COOKIE['id']) && isset($_COOKIE['key'])) {
 
@@ -86,7 +86,9 @@
               Swal.fire({
                 title: "Authentication Failed!",
                 text: "Number Phone / Password Inccoret!",
-                icon: "error"
+                icon: "error",
+                showConfirmButton: false,
+                timer: 2500,
               });
           </script> 
   ';
@@ -124,7 +126,7 @@
                   </div>
                   <p class="mt-4 text-sm text-center">
                     Don't have an account?
-                    <a href="signup.php" class="text-primary text-gradient font-weight-bold">Sign up</a>
+                    <a href="signup" class="text-primary text-gradient font-weight-bold">Sign up</a>
                   </p>
                 </form>
               </div>
@@ -135,13 +137,13 @@
     </div>
   </main>
   <!--   Core JS Files   -->
-  <script src="../assets/js/core/popper.min.js"></script>
-  <script src="../assets/js/core/bootstrap.min.js"></script>
-  <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
-  <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
+  <script src="assets/js/core/popper.min.js"></script>
+  <script src="assets/js/core/bootstrap.min.js"></script>
+  <script src="assets/js/plugins/perfect-scrollbar.min.js"></script>
+  <script src="assets/js/plugins/smooth-scrollbar.min.js"></script>
 
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="../assets/js/material-dashboard.min.js?v=3.1.0"></script>
+  <script src="assets/js/material-dashboard.min.js?v=3.1.0"></script>
 </body>
 
 </html>
